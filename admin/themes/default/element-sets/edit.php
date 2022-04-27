@@ -23,8 +23,9 @@ echo flash();
             <div class="sortable-item">
                 <?php echo __($element->name); ?>
                 <?php echo $this->formHidden("elements[{$element->id}][order]", $element->order, array('class' => 'element-order')); ?>
+                <button class="drawer-toggle" type="button" aria-label="<?php echo __('Expand'); ?>" title="<?php echo __('Expand'); ?>"></button>
             </div>
-            <div class="drawer-contents">
+            <div class="drawer-contents closed">
                 <?php echo __($element->description); ?>
                 <label for="<?php echo "elements[{$element->id}][comment]"; ?>"><?php echo __('Comment'); ?></label>
                 <?php echo $this->formTextarea("elements[{$element->id}][comment]", $element->comment, array('rows' => '3')); ?>
