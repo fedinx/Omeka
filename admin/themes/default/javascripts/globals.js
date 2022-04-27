@@ -114,6 +114,17 @@ if (!Omeka) {
         });
     };
 
+    Omeka.toggleDrawer = function () {
+        $('#content').on('click', '.drawer-toggle', function(e) {
+            e.preventDefault();
+            $(this).parent('.sortable-item').next('.drawer-contents').toggleClass('opened closed');
+            $(this).toggleClass('opened');
+        })
+        .mousedown(function (e) {
+            e.stopPropagation();
+        });
+    };
+
     Omeka.addReadyCallback = function (callback, params) {
         this.readyCallbacks.push([callback, params]);
     };
@@ -203,7 +214,8 @@ if (!Omeka) {
         [Omeka.skipNav, null],
         [Omeka.moveNavList, null],
         [Omeka.mediaFallback, null],
-        [Omeka.warnIfUnsaved, null]
+        [Omeka.warnIfUnsaved, null],
+        [Omeka.toggleDrawer, null]
     ];
 
     /**

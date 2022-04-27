@@ -129,8 +129,9 @@ class Omeka_Form_Navigation extends Omeka_Form
                  . $checkboxClass
                  . '">';
         $html .= html_escape($page->getLabel());
+        $html .= '<button class="drawer-toggle" type="button" aria-label="' . __('Expand') . '" title="' . __('Expand') . '"></button>';
         $html .= '</div>';
-        $html .= '<div class="drawer-contents">';
+        $html .= '<div class="drawer-contents closed">';
         $html .= '<label>' . __('Label') . '</label><input type="text" class="navigation-label" />';
         $html .= '<label>' . __('URL') . '</label><input type="text" class="navigation-uri" />';
         $html .= '<div class="main_link_buttons"></div>';
