@@ -722,11 +722,6 @@ button.ui-dialog-titlebar-close {
   -moz-border-radius: 2px;
   border-radius: 2px; }
 
-button.drawer-toggle {
-  padding: 0;
-  border: 0;
-  margin: 0; }
-
 .drawer-toggle,
 .delete-element,
 .undo-delete {
@@ -810,7 +805,7 @@ button.drawer-toggle {
   margin: -2px 0 2px 0;
   overflow: auto;
   padding: 20px; }
-  .drawer-contents.closed, .drawer-contents:empty {
+  .drawer-contents:empty {
     display: none;
     padding: 0; }
   .drawer-contents > *:only-child {

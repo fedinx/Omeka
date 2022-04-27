@@ -25,6 +25,28 @@ Omeka.ItemTypes = {};
     };
 
     /**
+     * Add link that collapses and expands content.
+     */
+    Omeka.ItemTypes.addHideButtons = function () {
+        $('.sortable .drawer-contents').each(function () {
+            if( $(this).prev().hasClass("sortable-item") ) {
+                $(this).hide();
+            }
+        });
+        $('div.sortable-item').each(function () {
+            $(this).append('<div class="drawer-toggle"></div>');
+        });
+        $('.drawer-toggle').click( function (event) {
+                event.preventDefault();
+                $(event.target).parent().next().toggle();
+                $(this).toggleClass('opened');
+            })
+            .mousedown(function (event) {
+                event.stopPropagation();
+            });
+    };
+
+    /**
      * Add AJAX-enabled buttons to item type form for adding and removing elements.
      *
      * @param {string} addNewRequestUrl

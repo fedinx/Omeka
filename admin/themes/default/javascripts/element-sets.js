@@ -25,6 +25,27 @@ Omeka.ElementSets = {};
     };
 
     /**
+     * Add link that collapses and expands content.
+     */
+    Omeka.ElementSets.addHideButtons = function () {
+        $('.sortable .drawer-contents').each(function () {
+            $(this).hide();
+        });
+        $('div.sortable-item').each(function () {
+            $(this).append('<div class="drawer-toggle"></div>');
+        });
+        $('.drawer-toggle')
+            .click(function (event) {
+                event.preventDefault();
+                $(event.target).parent().next().toggle();
+                $(this).toggleClass('opened');
+            })
+            .mousedown(function (event) {
+                event.stopPropagation();
+            });
+    };
+
+    /**
      * Set up tag remove/undo buttons for each element.
      *
      */
