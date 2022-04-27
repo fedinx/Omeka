@@ -42,10 +42,9 @@ jQuery(document).ready(function () {
                     <a id="return-element-link-<?php echo html_escape($element->id); ?>" href="" class="undo-delete"><?php echo __('Undo'); ?></a>
                     <a id="remove-element-link-<?php echo html_escape($element->id); ?>" href="" class="delete-element"><?php echo __('Remove'); ?></a>
                     <?php endif; ?>
-                    <button class="drawer-toggle" type="button" aria-label="<?php echo __('Expand'); ?>" title="<?php echo __('Expand'); ?>"></button>
                     </div>
                     
-                    <div class="drawer-contents closed">
+                    <div class="drawer-contents">
                         <div class="element-description"><?php echo html_escape($element->description); ?></div>
                     </div>
                 </li>

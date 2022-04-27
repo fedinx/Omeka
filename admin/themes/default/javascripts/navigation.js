@@ -45,6 +45,25 @@ Omeka.Navigation = {};
         select.val(selectedValue);
     };
 
+    Omeka.Navigation.updateHideButtons = function () {
+        $('div.sortable-item').each(function () {
+            var headerDiv = $(this); 
+            if (!headerDiv.find('.drawer-toggle').length) {
+                headerDiv.append('<div class="drawer-toggle"></div>');
+                headerDiv.find('.drawer-toggle')
+                    .click(function (event) {
+                        event.preventDefault();
+                        $(this).parent().next().toggle();
+                        $(this).toggleClass('opened');
+                    })
+                    .mousedown(function (event) {
+                        event.stopPropagation();
+                    });
+                headerDiv.next().hide();
+            }
+        });
+    };
+
     Omeka.Navigation.updateVisitButtons = function () {
         $('div.sortable-item > input[type="checkbox"]').each(function () {
             var hiddenInfo = $.parseJSON($(this).val());
