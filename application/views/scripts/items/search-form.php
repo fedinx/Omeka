@@ -16,7 +16,7 @@ $formAttributes['method'] = 'GET';
             echo $this->formText(
                 'search',
                 @$_REQUEST['search'],
-                array('id' => 'keyword-search', 'size' => '40')
+                array('id' => 'keyword-search', 'maxlength' => '40')
             );
         ?>
         </div>
@@ -91,7 +91,7 @@ $formAttributes['method'] = 'GET';
                     "advanced[$i][terms]",
                     @$rows['terms'],
                     array(
-                        'size' => '20',
+                        'maxlength' => '20',
                         'title' => __("Search Terms"),
                         'id' => null,
                         'class' => 'advanced-search-terms'
@@ -110,7 +110,7 @@ $formAttributes['method'] = 'GET';
         <div class="inputs">
         <?php
             echo $this->formText('range', @$_GET['range'],
-                array('size' => '40')
+                array('maxlength' => '40')
             );
         ?>
         </div>
@@ -166,7 +166,7 @@ $formAttributes['method'] = 'GET';
         <div class="inputs">
         <?php
             echo $this->formText('tags', @$_REQUEST['tags'],
-                array('size' => '40', 'id' => 'tag-search')
+                array('maxlength' => '40', 'id' => 'tag-search')
             );
         ?>
         </div>
